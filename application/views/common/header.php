@@ -78,7 +78,7 @@
 				</div>
  -->				<ul class="nav navbar-nav navbar-left">
 						<li class="active"><a href="<?= base_url('Welcome')?>">Home</a></li>
-						<li><a href="<?= base_url('Welcome')?>">Bookings</a></li>
+						<li><a href="<?= base_url('Bookings/create')?>">Bookings</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
