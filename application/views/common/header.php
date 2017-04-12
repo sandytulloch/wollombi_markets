@@ -63,20 +63,15 @@
 		</script>
 		<script src="<?= base_url('includes/js/less-1.4.1.min.js') ?>"></script>
 	</head>
-	<body>
-			<div class="page-header">
+	<body style="padding-top:70px;">
 
 
-
-					<h1 ><?= APP_NAME ?></h1>
-			</div>
-
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-				<!-- <div class="navbar-header">
-					<a class="navbar-brand" href="#">WebSiteName</a>
-				</div>
- -->				<ul class="nav navbar-nav navbar-left">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Wollombi June Markets</a>
+					</div>
+					<ul class="nav navbar-nav navbar-left">
 						<li class="active"><a href="<?= base_url('Welcome')?>">Home</a></li>
 						<li><a href="<?= base_url('Bookings/create')?>">Bookings</a></li>
 					</ul>
