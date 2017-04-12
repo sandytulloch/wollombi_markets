@@ -73,6 +73,11 @@
 					</div>
 					<ul class="nav navbar-nav navbar-left">
 
+						<!-- 
+							######## This is the navbar section.
+							To add new links simply copy the section below and update the URL path specified in the active check and the url link
+
+						 -->
 						<li <?=$this->uri->uri_string()=='Welcome' ? 'class="active"' : '' ?>>
 							<a href="<?= base_url('Welcome')?>">Home</a>
 						</li>
