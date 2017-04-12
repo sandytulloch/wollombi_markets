@@ -119,7 +119,7 @@ var ViewModel = function(data) {
 			rect.data = self.sites()[x];
 			rect.selected = false;
 			rect.on('click', function(e){
-				refreshSites();
+				refreshSites();		
 				if(e.target.data.Status()=="Empty"){
 				self.selected_sites.push(e.target.data);
 				e.target.selected = true;
