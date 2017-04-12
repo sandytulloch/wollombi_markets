@@ -72,8 +72,13 @@
 						<a class="navbar-brand" href="#">Wollombi June Markets</a>
 					</div>
 					<ul class="nav navbar-nav navbar-left">
-						<li class="active"><a href="<?= base_url('Welcome')?>">Home</a></li>
-						<li><a href="<?= base_url('Bookings/create')?>">Bookings</a></li>
+
+						<li <?=$this->uri->uri_string()=='Welcome' ? 'class="active"' : '' ?>>
+							<a href="<?= base_url('Welcome')?>">Home</a>
+						</li>
+						<li <?=$this->uri->uri_string()=='Bookings/create' ? 'class="active"' : '' ?>>
+							<a href="<?= base_url('Bookings/create')?>">Bookings</a>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
