@@ -9,6 +9,8 @@
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/jquery/jquery-ui-1.10.3.custom/css/humanity/jquery-ui-1.10.3.custom.css') ?>" />
 		<!-- <link type="text/css" rel="<?= is_dev_server() && !is_mobile() ? 'stylesheet/less' : 'stylesheet' ?>" href="<?= base_url('includes/' . (is_dev_server() && !is_mobile() ? 'css/custom-theme/custom-bootstrap.less' : 'css/styles.css')) ?>" />-->
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/styles.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.draw.css') ?>" />
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/datatables.min.css') ?>" />  -->
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/datatables/tableTools.css') ?>" /> -->
 
@@ -40,6 +42,8 @@
 		<script src="<?= base_url_versioned('includes/js/spin.min.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/application.js?js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/moment.js') ?>"></script>
+		<script src="<?= base_url_versioned('includes/js/leaflet.js') ?>"></script>
+		<script src="<?= base_url_versioned('includes/js/Leaflet.draw.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/typeahead.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/tableTools.min.js') ?>"></script>
 		<?php if (isset($view_model)): // Output a matching view model file, if we have one. ?>
@@ -67,7 +71,9 @@
 				</div>
 				<div class="content-column">
 					<h1 ><?= APP_NAME ?></h1>
+					<?php if(is_Logged_in()): ?>
 						<span class='pull-left'><b>Logged in as: <?=get_user('username')?></b></span>
+					<?php endif; ?>
 						<!-- <a href="<?=site_url() . 'staff/users/'?>" class="btn btn-info pull-right"><i class='glyphicon glyphicon-edit'></i>Permissions</a>. -->
 				</div>
 

@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://ausynb1602022/wollombi_markets/';
+$config['base_url'] = 'http://laptop-uvu0kkma/wollombi_markets/';
 
 /*
 |--------------------------------------------------------------------------
@@ -314,7 +314,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '476917298287238623237238973427401012983923';
 
 /*
 |--------------------------------------------------------------------------

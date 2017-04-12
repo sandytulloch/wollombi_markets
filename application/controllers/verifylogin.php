@@ -21,12 +21,13 @@ class VerifyLogin extends CI_Controller {
    if($this->form_validation->run() == FALSE)
    {
      //Field validation failed.  User redirected to login page
+    
      render('Login/login');
    }
    else
    {
      //Go to private area
-     redirect('', 'refresh');
+      redirect('', 'refresh');
    }
  
  }
@@ -38,18 +39,14 @@ class VerifyLogin extends CI_Controller {
  
    //query the database
    $result = $this->user->login($username, $password);
- 
+  // dbg($result);
    if($result)
    {
-     $sess_array = array();
-     foreach($result as $row)
-     {
-       $sess_array = array(
-         'id' => $row->id,
-         'username' => $row->username
-       );
-       $this->session->set_userdata('logged_in', $sess_array);
-     }
+     $sess_array = array(
+       'id' => $result['id'],
+       'username' => $result['username']
+     );
+     $this->session->set_userdata('logged_in', $sess_array);
      return TRUE;
    }
    else

@@ -20,31 +20,23 @@ function generate_navigation($active_link = 'project') {
 
 	$links = array(	'Home' => array('url' => 'Welcome', 'icon' => 'glyphicon glyphicon-home', 'attr' => ''),);
 
-		$links['Clients'] = array(
-			'url' => array('url' => 'Clients/search', 'attr' => ''),
+	if(is_logged_in()){
+		$links['Account'] = array(
+			'url' => array('url' => 'Bookings', 'attr' => ''),
 			'icon' => 'glyphicon glyphicon-user',
 			'attr' => '', 
 			'sub-links' => array(
-			'Search' => array('url' => 'Clients/search', 'attr' => '', 'icon' => 'glyphicon glyphicon-search'),
-			'Add' => array('url' => 'Clients/add', 'attr' => '', 'icon' => 'glyphicon glyphicon-plus'),
+			'Create Booking' => array('url' => 'Bookings/create', 'attr' => '', 'icon' => 'glyphicon glyphicon-plus'),
 			)
 		);
-
-		$links['Internal'] = array(
-			'url' => array('url' => 'Internal/search', 'attr' => ''),
-			'icon' => 'glyphicon glyphicon-lock',
-			'attr' => '', 
-			'sub-links' => array(
-			'Search' => array('url' => 'Internal/search', 'attr' => '', 'icon' => 'glyphicon glyphicon-search'),
-			'Add' => array('url' => 'Internal/add', 'attr' => '', 'icon' => 'glyphicon glyphicon-plus'),
-			)
+	}
+	else{
+		$links['Login'] = array(
+			'url' => array('url' => 'Login/login', 'attr' => ''),
+			'icon' => 'glyphicon glyphicon-user',
+			'attr' => ''
 		);
-
-		$links['Administer'] = array(
-			'url' => array('url' => 'Admin/', 'attr' => ''),
-			'icon' => 'glyphicon glyphicon-cog',
-			'attr' => '', 
-		);
+	}
 
 /*		$links['Forms'] = array(
 			'url' => array('url' => 'staff/forms', 'attr' => ''),

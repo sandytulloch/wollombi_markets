@@ -13,7 +13,7 @@ Class User extends CI_Model
  
    if($query -> num_rows() == 1)
    {
-     return $query->result();
+     return $query->row_array();
    }
    else
    {
@@ -29,8 +29,5 @@ Class User extends CI_Model
           unset($res['password']);
           return $res;
     }
-
-
-
 }
 ?>

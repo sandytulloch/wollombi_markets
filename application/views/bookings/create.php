@@ -1,11 +1,49 @@
 
 
-<!-- ko foreach: sites -->
-	<label data-bind='text: number'></label>
-	<input type='checkbox'></input>
-	<span data-bind="text: Status"></span>
-	<br/>
-<!-- /ko -->
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">View Avaliable Sites</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse">
+      <div class="panel-body" id="map" style="height: 438px;">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse1">Selected Sites</a>
+      </h4>
+    </div>
+    <div id="collapse1" class="panel-collapse">
+      <div class="panel-body"">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Site Number</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody data-bind="foreach:selected_sites">
+            <tr>
+              <th data-bind="text: $data.number"></th>
+              <th>$40</th>
+              <th><a data-bind="click:function(){$root.remove_selected($data)}" class="btn btn-danger">Remove</a></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <button class='btn btn-success' data-bind='click: function(){book_selected_sites()}'>Book these sites</button>
 
@@ -23,7 +61,7 @@
       </div>
       <div class="modal-body">
        	<form>
-       		<input type='text' data-bind='textInput: first_name'/>
+       		<input type='text' data-bind=' first_name'/>
        	</form>
       </div>
       <div class="modal-footer">
