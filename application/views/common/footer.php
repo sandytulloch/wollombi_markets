@@ -1,3 +1,4 @@
+							</div><!-- close container -->
 						</div><!-- close page content -->
 					</div><!-- close page content container column -->
 				</div><!-- close content column -->

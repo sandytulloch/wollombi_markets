@@ -86,13 +86,12 @@
 				</div>
 			</nav>
 
-			<p><?=$this->uri->uri_string()?></p>
-
 
 			<div class="page-body">
 				<div class='page-alerts'>
 					<?= print_site_messages() ?>
 				</div>
 				<div class="page-content">
+					<div class='container'>
 						
 						
