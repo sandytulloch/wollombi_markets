@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://laptop-uvu0kkma/wollombi_markets/';
+// $config['base_url'] = 'http://laptop-uvu0kkma/wollombi_markets/';
+$config['base_url'] = 'http://localhost/wollombi_markets/';
 
 /*
 |--------------------------------------------------------------------------

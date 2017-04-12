@@ -64,31 +64,35 @@
 		<script src="<?= base_url('includes/js/less-1.4.1.min.js') ?>"></script>
 	</head>
 	<body>
-		<div class='bg-layer-1'>
-			<div class="page-head">
-				<div class="nav-column">
-					<a href='<?= site_url() ?>'><img width='250' height='25' style="margin:30px 2px" src='<?= base_url('includes/images/theme/GTB.png') ?>' /></a>
-				</div>
-				<div class="content-column">
-					<h1 ><?= APP_NAME ?></h1>
-					<?php if(is_Logged_in()): ?>
-						<span class='pull-left'><b>Logged in as: <?=get_user('username')?></b></span>
-					<?php endif; ?>
-						<!-- <a href="<?=site_url() . 'staff/users/'?>" class="btn btn-info pull-right"><i class='glyphicon glyphicon-edit'></i>Permissions</a>. -->
-				</div>
+			<div class="page-header">
 
+
+
+					<h1 ><?= APP_NAME ?></h1>
 			</div>
-			<div class="page-body">
-				<div class="nav-column">
-					<div class="page-nav">
-						<?= generate_navigation() ?>
-					</div>
+
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				<!-- <div class="navbar-header">
+					<a class="navbar-brand" href="#">WebSiteName</a>
 				</div>
-				<div class="content-column">
-					<div class='page-content-container'>
-						<div class='page-alerts'>
-							<?= print_site_messages() ?>
-						</div>
-						<div class="page-content">
+ -->				<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a href="<?= base_url('Welcome')?>">Home</a></li>
+						<li><a href="<?= base_url('Welcome')?>">Bookings</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
+					</ul>
+				</div>
+			</nav>
+
+			<p><?=$this->uri->uri_string()?></p>
+
+
+			<div class="page-body">
+				<div class='page-alerts'>
+					<?= print_site_messages() ?>
+				</div>
+				<div class="page-content">
 						
 						
