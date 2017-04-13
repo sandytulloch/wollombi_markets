@@ -21,6 +21,7 @@
 		<br>
 		<div class="login-help">
 			<a href="#">Register</a> - <a href="#">Forgot Password</a>
+
 		</div>
 	</div>
 </div>

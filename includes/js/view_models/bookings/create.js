@@ -11,7 +11,6 @@ var ViewModel = function(data) {
 	self.user = new RecordViewModel(data.user);
 	self.site_areas = [];
 	self.selected_sites = ko.observableArray();
-
 	self.booking_info = ko.observable(new RecordViewModel({
 		contact_name: '',
 		business_name: '',
@@ -208,10 +207,13 @@ function refreshSites(){
 			}
 		}
 		);
+<<<<<<< HEAD
 }
 
 function auto_grow(element) {
 
 	count = (model.booking_info().address().match(/\n/g)||[]).length;
     $(element).animate({height: (count + 1) *35 + 'px'}, 100);
+=======
+>>>>>>> refs/remotes/origin/dev
 }

@@ -33,7 +33,7 @@ class Bookings extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		//dbg('bookings landing');
+		dbg($_SESSION);
  		render('bookings/landing');
 	}
 

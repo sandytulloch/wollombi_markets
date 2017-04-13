@@ -9,6 +9,8 @@
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/jquery/jquery-ui-1.10.3.custom/css/humanity/jquery-ui-1.10.3.custom.css') ?>" />
 		<!-- <link type="text/css" rel="<?= is_dev_server() && !is_mobile() ? 'stylesheet/less' : 'stylesheet' ?>" href="<?= base_url('includes/' . (is_dev_server() && !is_mobile() ? 'css/custom-theme/custom-bootstrap.less' : 'css/styles.css')) ?>" />-->
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/styles.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.draw.css') ?>" />
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/datatables.min.css') ?>" />  -->
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/datatables/tableTools.css') ?>" /> -->
 
@@ -64,30 +66,40 @@
 		</script>
 		<script src="<?= base_url('includes/js/less-1.4.1.min.js') ?>"></script>
 	</head>
-	<body>
-		<div class='bg-layer-1'>
-			<div class="page-head">
-				<div class="nav-column">
-					<a href='<?= site_url() ?>'><img width='250' height='25' style="margin:30px 2px" src='<?= base_url('includes/images/theme/GTB.png') ?>' /></a>
-				</div>
-				<div class="content-column">
-					<h1 ><?= APP_NAME ?></h1>
-						<span class='pull-left'><b>Logged in as: <?=get_user('username')?></b></span>
-						<!-- <a href="<?=site_url() . 'staff/users/'?>" class="btn btn-info pull-right"><i class='glyphicon glyphicon-edit'></i>Permissions</a>. -->
-				</div>
+	<body style="padding-top:70px;">
 
-			</div>
-			<div class="page-body">
-				<div class="nav-column">
-					<div class="page-nav">
-						<?= generate_navigation() ?>
+
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Wollombi June Markets</a>
 					</div>
+					<ul class="nav navbar-nav navbar-left">
+
+						<!-- 
+							######## This is the navbar section.
+							To add new links simply copy the section below and update the URL path specified in the active check and the url link
+
+						 -->
+						<li <?=$this->uri->uri_string()=='Welcome' ? 'class="active"' : '' ?>>
+							<a href="<?= base_url('Welcome')?>">Home</a>
+						</li>
+						<li <?=$this->uri->uri_string()=='Bookings/create' ? 'class="active"' : '' ?>>
+							<a href="<?= base_url('Bookings/create')?>">Bookings</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
+					</ul>
 				</div>
-				<div class="content-column">
-					<div class='page-content-container'>
-						<div class='page-alerts'>
-							<?= print_site_messages() ?>
-						</div>
-						<div class="page-content">
+			</nav>
+
+
+			<div class="page-body">
+				<div class='page-alerts'>
+					<?= print_site_messages() ?>
+				</div>
+				<div class="page-content">
+					<div class='container'>
 						
 						
