@@ -207,13 +207,11 @@ function refreshSites(){
 			}
 		}
 		);
-<<<<<<< HEAD
 }
 
 function auto_grow(element) {
 
 	count = (model.booking_info().address().match(/\n/g)||[]).length;
     $(element).animate({height: (count + 1) *35 + 'px'}, 100);
-=======
->>>>>>> refs/remotes/origin/dev
+
 }
