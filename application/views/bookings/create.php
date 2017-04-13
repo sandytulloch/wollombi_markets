@@ -48,7 +48,6 @@
 <button class='btn btn-success' data-bind='click: function(){book_selected_sites()}'>Book these sites</button>
 
 
-
 <!-- Modal -->
 <div id="details_model" class="modal fade" role="dialog" data-bind='with: user'>
   <div class="modal-dialog">
@@ -59,7 +58,6 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Booking Details</h4>
       </div>
-<<<<<<< HEAD
       <div class="modal-body" data-bind=" with: $root.booking_info">
       <h4>Contact Details</h4>
         <div class="field-container">  
@@ -90,12 +88,6 @@
           <div class="field-underline"></div>
         </div>
 
-=======
-      <div class="modal-body">
-       	<form>
-       		<input type='text' data-bind=' first_name'/>
-       	</form>
->>>>>>> refs/remotes/origin/dev
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success" data-dismiss="modal">Reserve to Buy</button>
@@ -105,7 +97,6 @@
 
   </div>
 </div>
-
 
 
 <script>
