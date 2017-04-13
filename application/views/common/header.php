@@ -12,6 +12,9 @@
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/datatables.min.css') ?>" />  -->
 		<!-- <link type="text/css" rel="stylesheet" href="<?= base_url('includes/datatables/tableTools.css') ?>" /> -->
 
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.draw.css') ?>" />
+
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/Datatables/DataTables-1.10.10/css/dataTables.bootstrap.min.css') ?>" />
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/Datatables/Buttons-1.1.0/css/buttons.bootstrap.min.css') ?>" />
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/Datatables/FixedHeader-3.1.0/css/fixedHeader.bootstrap.min.css') ?>" />
@@ -40,6 +43,8 @@
 		<script src="<?= base_url_versioned('includes/js/spin.min.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/application.js?js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/moment.js') ?>"></script>
+		<script src="<?= base_url_versioned('includes/js/leaflet.js') ?>"></script>
+		<script src="<?= base_url_versioned('includes/js/Leaflet.draw.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/typeahead.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/tableTools.min.js') ?>"></script>
 		<?php if (isset($view_model)): // Output a matching view model file, if we have one. ?>

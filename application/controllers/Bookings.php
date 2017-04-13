@@ -43,4 +43,8 @@ class Bookings extends CI_Controller {
 		$output['data']['sites'] = $this->sites_model->get_sites_with_status();
 		render('bookings/create', $output);
 	}
+
+	public function updateSites(){
+		output_json($this->sites_model->get_sites_with_status());
+	}
 }
