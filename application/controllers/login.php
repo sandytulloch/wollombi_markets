@@ -5,6 +5,7 @@ class Login extends CI_Controller {
  function __construct()
  {
    parent::__construct();
+    $this->load->model('user');
  }
 
  function login()
@@ -25,6 +26,19 @@ class Login extends CI_Controller {
    $this->session->unset_userdata('logged_in');
    session_destroy();
    redirect('', 'refresh');
+ }
+
+ function create(){
+ 	$user_id = $this->user->create($this->input->post());
+
+
+
+    $sess_array = array(
+       'id' => $user_id,
+       'username' => $this->input->post('username')
+     );
+     $this->session->set_userdata('logged_in', $sess_array);
+     redirect('Bookings', 'refresh');
  }
 
 }

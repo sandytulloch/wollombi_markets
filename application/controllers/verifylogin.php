@@ -27,7 +27,7 @@ class VerifyLogin extends CI_Controller {
    else
    {
      //Go to private area
-     redirect('Bookings/create', 'refresh');
+     redirect('Bookings', 'refresh');
    }
  
  }

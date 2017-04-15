@@ -30,6 +30,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   width:100%;
   padding:15px 10px 0;
   border:none;
+  border-bottom:1px solid gray;
   font-size:14px;
 }
 .field:focus {
@@ -68,4 +69,18 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 .field:focus + .floating-label + .field-underline {
   border-color:#03a9f4;
+}
+
+
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body-tc{
+    height: 250px;
+    overflow-y: auto;
+}
+
+.panel-body-tc{
+	background-color: #c1c1c1;
 }

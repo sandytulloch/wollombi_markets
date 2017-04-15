@@ -29,5 +29,11 @@ Class User extends CI_Model
           unset($res['password']);
           return $res;
     }
+
+  public function create($data){
+    $data['password'] = md5($data['password']);
+    $this->db->insert('users', $data);
+    return $this->db->insert_id();
+  }
 }
 ?>

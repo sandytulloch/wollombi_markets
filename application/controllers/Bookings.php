@@ -25,6 +25,7 @@ class Bookings extends CI_Controller {
     {
             parent::__construct();
             $this->load->model('sites_model');
+            $this->load->model('reservations_model');
             $this->load->model('user');
             $this->load->helper('url_helper');
     }
@@ -33,18 +34,36 @@ class Bookings extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		dbg($_SESSION);
+		// dbg($_SESSION);
+
+ 		requires_login();
  		render('bookings/landing');
+	}
+
+	public function create_new(){
+		$this->reservations_model->new_reservation();
+		$this->create();
+
 	}
 
 	public function create(){
 		// $output['data']['user'] = get_user('username');
+		$output['data']['reservation'] = $this->reservations_model->get_current_reservation();
 		$output['data']['user'] = $this->user->get_user(get_user('username'));
 		$output['data']['sites'] = $this->sites_model->get_sites_with_status();
 		render('bookings/create', $output);
 	}
 
 	public function updateSites(){
-		output_json($this->sites_model->get_sites_with_status());
+		$updated = $this->sites_model->get_sites_with_status();
+		$output = array();
+		foreach($updated as $site){
+			$output[$site['id']] = $site;
+		}
+		output_json($output);
+	}
+
+	public function updateReservedStatus($site, $status){
+		output_json(array('result'=>$this->sites_model->updateReservedStatus($site, $status)));
 	}
 }

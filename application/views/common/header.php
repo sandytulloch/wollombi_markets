@@ -16,6 +16,7 @@
 
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.css') ?>" />
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/css/leaflet.draw.css') ?>" />
+		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/swal/sweetalert2.css') ?>" />
 
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/Datatables/DataTables-1.10.10/css/dataTables.bootstrap.min.css') ?>" />
 		<link type="text/css" rel="stylesheet" href="<?= base_url('includes/Datatables/Buttons-1.1.0/css/buttons.bootstrap.min.css') ?>" />
@@ -49,6 +50,7 @@
 		<script src="<?= base_url_versioned('includes/js/Leaflet.draw.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/typeahead.js') ?>"></script>
 		<script src="<?= base_url_versioned('includes/js/tableTools.min.js') ?>"></script>
+		<script src="<?= base_url_versioned('includes/swal/sweetalert2.js') ?>"></script>
 		<?php if (isset($view_model)): // Output a matching view model file, if we have one. ?>
 			<script src="<?= base_url_versioned($view_model) ?>"></script>
 		<?php endif; ?>
@@ -84,12 +86,17 @@
 						<li <?=$this->uri->uri_string()=='Welcome' ? 'class="active"' : '' ?>>
 							<a href="<?= base_url('Welcome')?>">Home</a>
 						</li>
-						<li <?=$this->uri->uri_string()=='Bookings/create' ? 'class="active"' : '' ?>>
-							<a href="<?= base_url('Bookings/create')?>">Bookings</a>
+						<li <?=$this->uri->uri_string()=='Bookings' ? 'class="active"' : '' ?>>
+							<a href="<?= base_url('Bookings')?>">Bookings</a>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
+						<li>
+							<p class="navbar-text navbar-right"><? if(get_user('username')){ echo 'Logged in as ';}?> <a href="#" class="navbar-link"><?=get_user('username')?></a></p>
+						</li>
+						<li>
+							<p class="navbar-text navbar-right"><a href="<?=base_url('Login/logout')?>" class="navbar-link"><? if(get_user('username')){ echo 'Logout?';}?></a></p>
+						</li>
 					</ul>
 				</div>
 			</nav>
