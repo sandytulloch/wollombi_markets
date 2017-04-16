@@ -41,6 +41,14 @@ class Login extends CI_Controller {
      redirect('Bookings', 'refresh');
  }
 
+
+public function check_unique(){
+    // $this->input->post('email');
+    // dbg($this->input->post());
+
+    output_json($this->user->check_unique($this->input->post('email')));
+}
+
 }
 
 ?>

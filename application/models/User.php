@@ -35,5 +35,14 @@ Class User extends CI_Model
     $this->db->insert('users', $data);
     return $this->db->insert_id();
   }
+
+  public function check_unique($email){
+    // dbg($email);
+    $this->db->where('username', $email);
+    $query = $this->db->get('users');
+
+
+    return $query->num_rows() ? TRUE : FALSE;
+  }
 }
 ?>

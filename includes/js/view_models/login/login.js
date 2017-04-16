@@ -7,6 +7,7 @@ var ViewModel = function(data) {
 	self.first_name = ko.observable();
 	self.last_name = ko.observable();
 	self.phone = ko.observable();
+	self.is_not_unique = ko.observable();
 
 	self.valid = ko.computed(function(){
 		var ret = true;
@@ -27,7 +28,30 @@ var ViewModel = function(data) {
 			ret = false;
 		}
 
+		if(self.is_not_unique() == true){
+			ret = false;
+		}
+
 		return ret;
+	});
+
+	self.check_unique = function() {
+		$.post(
+				'./check_unique',
+				{'email':self.email()},
+				function(data){
+					// console.log(data);
+					if(data == true){ 
+						self.is_not_unique(true);
+					} else {
+						self.is_not_unique(false);
+					}
+				}
+			)
+	}
+
+	self.email.subscribe(function(){
+		self.check_unique();
 	});
 
 	self.submit_form = function(){

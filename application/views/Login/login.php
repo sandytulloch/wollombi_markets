@@ -38,10 +38,12 @@
       </div>
 	      <div class="modal-body">
   			<form id='new_user' action="<?=base_url('Login/create')?>" method='POST'>
+  				<p>Please enter some details for your account. </p>
 				<div class="field-container" style="margin: 0 auto;">  
 			        <input type="text" class="field" required placeholder="Email" name="username" data-bind="textInput:email"/>
 			        <label class="floating-label">Email</label>
 		        </div>
+		        <p data-bind="visible: is_not_unique">Sorry, this email has already been used</p>
 		        <div class="field-container" style="margin: 0 auto; margin-top: 30px">  
 			        <input type="password" class="field" required placeholder="Password" name="password" data-bind="textInput:p1"/>
 			        <label class="floating-label">Password</label> 

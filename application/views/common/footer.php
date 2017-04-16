@@ -2,6 +2,7 @@
 						</div><!-- close page content -->
 					</div><!-- close page content container column -->
 				</div><!-- close content column -->
+					<br/>
 					<p class="center"><small class='attribution'>&copy; <?= date('Y') ?> Wollombi Volunteer Bush Fire Brigade</small></p>
 			</div><!-- close page body -->
 	</body>
